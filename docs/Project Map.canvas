@@ -1,780 +1,96 @@
 {
-	"nodes": [
-		{
-			"id": "root",
-			"type": "text",
-			"x": 470,
-			"y": -320,
-			"width": 500,
-			"height": 140,
-			"text": "# Bluey Number Guessing Game\nGuess a number from 1 to 100 in 5 tries.\nThree files, one job each:",
-			"color": "3"
-		},
-		{
-			"id": "html",
-			"type": "text",
-			"x": 0,
-			"y": -60,
-			"width": 400,
-			"height": 120,
-			"text": "## index.html\n**Structure** \u2014 what is on the page",
-			"color": "5"
-		},
-		{
-			"id": "html-0",
-			"type": "text",
-			"x": 20,
-			"y": 140,
-			"width": 380,
-			"height": 130,
-			"text": "**Page setup**\nViewport tag for phones, Fredoka font, links to `style.css` and `script.js`",
-			"color": "5"
-		},
-		{
-			"id": "html-1",
-			"type": "text",
-			"x": 20,
-			"y": 300,
-			"width": 380,
-			"height": 130,
-			"text": "**Title & instructions**\n\"Guess a Number\" heading and the 1\u2013100 / 5 guesses rules",
-			"color": "5"
-		},
-		{
-			"id": "html-2",
-			"type": "text",
-			"x": 20,
-			"y": 460,
-			"width": 380,
-			"height": 130,
-			"text": "**Guess form**\n`#guess-form`, `#guess-input` (number box) and the **Guess!** button. `novalidate` lets the script handle errors",
-			"color": "5"
-		},
-		{
-			"id": "html-3",
-			"type": "text",
-			"x": 20,
-			"y": 620,
-			"width": 380,
-			"height": 130,
-			"text": "**Feedback line**\n`#feedback`: where too high / too low / correct appears (read aloud by screen readers)",
-			"color": "5"
-		},
-		{
-			"id": "html-4",
-			"type": "text",
-			"x": 20,
-			"y": 780,
-			"width": 380,
-			"height": 130,
-			"text": "**Remaining guesses**\n`.remaining` box with the big `#guesses-left` number",
-			"color": "5"
-		},
-		{
-			"id": "html-5",
-			"type": "text",
-			"x": 20,
-			"y": 940,
-			"width": 380,
-			"height": 130,
-			"text": "**Result pop-up**\n`<dialog id=\"result-dialog\">` with `#result-title`, `#result-message`, `#result-button`. Its button closes the pop-up",
-			"color": "5"
-		},
-		{
-			"id": "html-6",
-			"type": "text",
-			"x": 20,
-			"y": 1100,
-			"width": 380,
-			"height": 130,
-			"text": "**Decorations**\n`.paws` and `.grass`, hidden from screen readers",
-			"color": "5"
-		},
-		{
-			"id": "css",
-			"type": "text",
-			"x": 520,
-			"y": -60,
-			"width": 400,
-			"height": 120,
-			"text": "## style.css\n**Appearance** \u2014 how it looks",
-			"color": "6"
-		},
-		{
-			"id": "css-0",
-			"type": "text",
-			"x": 540,
-			"y": 140,
-			"width": 380,
-			"height": 130,
-			"text": "**Colour palette**\n`:root` variables: sky blue, deep blue, orange, cream, grass green, red",
-			"color": "6"
-		},
-		{
-			"id": "css-1",
-			"type": "text",
-			"x": 540,
-			"y": 300,
-			"width": 380,
-			"height": 130,
-			"text": "**Page background**\nSky gradient on `body`, card centred; `.grass` strip at the bottom",
-			"color": "6"
-		},
-		{
-			"id": "css-2",
-			"type": "text",
-			"x": 540,
-			"y": 460,
-			"width": 380,
-			"height": 130,
-			"text": "**Game card**\n`.card`: cream, rounded, thick blue border and shadow",
-			"color": "6"
-		},
-		{
-			"id": "css-3",
-			"type": "text",
-			"x": 540,
-			"y": 620,
-			"width": 380,
-			"height": 130,
-			"text": "**Inputs & buttons**\nBig number box, chunky orange buttons (48px+ tall), clear focus outlines",
-			"color": "6"
-		},
-		{
-			"id": "css-4",
-			"type": "text",
-			"x": 540,
-			"y": 780,
-			"width": 380,
-			"height": 130,
-			"text": "**Feedback colours**\n`.feedback.wrong` = red, `.feedback.right` = green",
-			"color": "6"
-		},
-		{
-			"id": "css-5",
-			"type": "text",
-			"x": 540,
-			"y": 940,
-			"width": 380,
-			"height": 130,
-			"text": "**Guess counter**\n`.remaining` and the large `.guesses-left` number",
-			"color": "6"
-		},
-		{
-			"id": "css-6",
-			"type": "text",
-			"x": 540,
-			"y": 1100,
-			"width": 380,
-			"height": 130,
-			"text": "**Paw prints**\n`.paws`, `.paw` and toe beans drawn with `::before` / `::after`",
-			"color": "6"
-		},
-		{
-			"id": "css-7",
-			"type": "text",
-			"x": 540,
-			"y": 1260,
-			"width": 380,
-			"height": 130,
-			"text": "**Pop-up looks**\n`dialog`, dimmed `::backdrop`, `dialog.win` green, `dialog.lose` red",
-			"color": "6"
-		},
-		{
-			"id": "css-8",
-			"type": "text",
-			"x": 540,
-			"y": 1420,
-			"width": 380,
-			"height": 130,
-			"text": "**Fits any screen**\n90% widths with max widths and `clamp()` text sizes; no media queries",
-			"color": "6"
-		},
-		{
-			"id": "js",
-			"type": "text",
-			"x": 1040,
-			"y": -60,
-			"width": 400,
-			"height": 120,
-			"text": "## script.js\n**Behaviour** \u2014 the game's brain",
-			"color": "2"
-		},
-		{
-			"id": "js-0",
-			"type": "text",
-			"x": 1060,
-			"y": 140,
-			"width": 380,
-			"height": 130,
-			"text": "**Settings**\n`MAX_GUESSES` = 5, `MIN_NUMBER` = 1, `MAX_NUMBER` = 100",
-			"color": "2"
-		},
-		{
-			"id": "js-1",
-			"type": "text",
-			"x": 1060,
-			"y": 300,
-			"width": 380,
-			"height": 130,
-			"text": "**Game state**\n`secretNumber` and `guessesLeft`",
-			"color": "2"
-		},
-		{
-			"id": "js-2",
-			"type": "text",
-			"x": 1060,
-			"y": 460,
-			"width": 380,
-			"height": 130,
-			"text": "**Element lookups**\nFinds the 8 page elements by ID with `getElementById`",
-			"color": "2"
-		},
-		{
-			"id": "js-3",
-			"type": "text",
-			"x": 1060,
-			"y": 620,
-			"width": 380,
-			"height": 130,
-			"text": "**startNewGame()**\nPicks a random number, resets to 5 guesses, clears the box and message",
-			"color": "2"
-		},
-		{
-			"id": "js-4",
-			"type": "text",
-			"x": 1060,
-			"y": 780,
-			"width": 380,
-			"height": 130,
-			"text": "**showFeedback()**\nWrites the message and sets the `wrong` / `right` colour class",
-			"color": "2"
-		},
-		{
-			"id": "js-5",
-			"type": "text",
-			"x": 1060,
-			"y": 940,
-			"width": 380,
-			"height": 130,
-			"text": "**Submit handler**\nChecks the input, uses a guess, then decides: correct, out of guesses, too high or too low",
-			"color": "2"
-		},
-		{
-			"id": "js-6",
-			"type": "text",
-			"x": 1060,
-			"y": 1100,
-			"width": 380,
-			"height": 130,
-			"text": "**showResult()**\nFills in the pop-up text, adds `win` / `lose` and opens it",
-			"color": "2"
-		},
-		{
-			"id": "js-7",
-			"type": "text",
-			"x": 1060,
-			"y": 1260,
-			"width": 380,
-			"height": 130,
-			"text": "**Auto-restart**\nWhen the pop-up closes (button or Esc), calls `startNewGame()`",
-			"color": "2"
-		},
-		{
-			"id": "ref-title",
-			"type": "text",
-			"x": 1580,
-			"y": -320,
-			"width": 560,
-			"height": 80,
-			"text": "## Reference\nFull details and line numbers live in the docs below."
-		},
-		{
-			"id": "ref-map",
-			"type": "file",
-			"file": "docs/PROJECT_MAP.md",
-			"x": 1580,
-			"y": -220,
-			"width": 560,
-			"height": 700
-		},
-		{
-			"id": "ref-rules",
-			"type": "file",
-			"file": "CLAUDE.md",
-			"x": 1580,
-			"y": 520,
-			"width": 560,
-			"height": 500
-		},
-		{
-			"id": "legend",
-			"type": "text",
-			"x": 1580,
-			"y": 1060,
-			"width": 560,
-			"height": 230,
-			"text": "## Colour key\n- **Cyan**: `index.html` (structure)\n- **Purple**: `style.css` (appearance)\n- **Orange**: `script.js` (behaviour)\n- **Green**: something the player does"
-		},
-		{
-			"id": "flow-group",
-			"type": "group",
-			"label": "How one round works",
-			"x": -80,
-			"y": 1700,
-			"width": 1580,
-			"height": 2160
-		},
-		{
-			"id": "flow-title",
-			"type": "text",
-			"x": 520,
-			"y": 1740,
-			"width": 380,
-			"height": 70,
-			"text": "Box colour = the file that handles that step"
-		},
-		{
-			"id": "f-load",
-			"type": "text",
-			"x": 0,
-			"y": 1840,
-			"width": 380,
-			"height": 130,
-			"text": "**Page loads**\n`index.html` builds the page, `style.css` dresses it",
-			"color": "5"
-		},
-		{
-			"id": "f-new",
-			"type": "text",
-			"x": 0,
-			"y": 2040,
-			"width": 380,
-			"height": 130,
-			"text": "**startNewGame()**\nSecret number picked, 5 guesses, everything cleared",
-			"color": "2"
-		},
-		{
-			"id": "f-type",
-			"type": "text",
-			"x": 0,
-			"y": 2240,
-			"width": 380,
-			"height": 130,
-			"text": "**Player types a number**\nand clicks **Guess!** or presses Enter",
-			"color": "4"
-		},
-		{
-			"id": "f-valid",
-			"type": "text",
-			"x": 0,
-			"y": 2440,
-			"width": 380,
-			"height": 130,
-			"text": "**Is it a whole number from 1 to 100?**\nSubmit handler checks",
-			"color": "2"
-		},
-		{
-			"id": "f-hint",
-			"type": "text",
-			"x": 520,
-			"y": 2440,
-			"width": 380,
-			"height": 130,
-			"text": "**Red hint**\n\"Please enter a whole number from 1 to 100.\" No guess used",
-			"color": "2"
-		},
-		{
-			"id": "f-use",
-			"type": "text",
-			"x": 0,
-			"y": 2640,
-			"width": 380,
-			"height": 130,
-			"text": "**Use one guess**\n`guessesLeft` goes down; `#guesses-left` updates",
-			"color": "2"
-		},
-		{
-			"id": "f-correct",
-			"type": "text",
-			"x": 0,
-			"y": 2840,
-			"width": 380,
-			"height": 130,
-			"text": "**Is it the secret number?**",
-			"color": "2"
-		},
-		{
-			"id": "f-win",
-			"type": "text",
-			"x": 520,
-			"y": 2840,
-			"width": 380,
-			"height": 130,
-			"text": "**Green \"Correct!\"**\n`showResult(true)`: Hooray! pop-up",
-			"color": "2"
-		},
-		{
-			"id": "f-out",
-			"type": "text",
-			"x": 0,
-			"y": 3040,
-			"width": 380,
-			"height": 130,
-			"text": "**Any guesses left?**",
-			"color": "2"
-		},
-		{
-			"id": "f-hilo",
-			"type": "text",
-			"x": 1040,
-			"y": 3040,
-			"width": 380,
-			"height": 130,
-			"text": "**Too high / too low**\nRed message under the box",
-			"color": "2"
-		},
-		{
-			"id": "f-lose",
-			"type": "text",
-			"x": 0,
-			"y": 3240,
-			"width": 380,
-			"height": 130,
-			"text": "**Out of guesses**\n`showResult(false)`: \"Oh, biscuits!\" pop-up shows the number",
-			"color": "2"
-		},
-		{
-			"id": "f-popup",
-			"type": "text",
-			"x": 0,
-			"y": 3440,
-			"width": 380,
-			"height": 130,
-			"text": "**Pop-up appears**\n`<dialog>` styled green (`.win`) or red (`.lose`)",
-			"color": "6"
-		},
-		{
-			"id": "f-close",
-			"type": "text",
-			"x": 0,
-			"y": 3640,
-			"width": 380,
-			"height": 130,
-			"text": "**Player clicks Play Again / Try Again or presses Esc**\n`close` event fires",
-			"color": "4"
-		}
+	"nodes":[
+		{"id":"root","type":"text","x":470,"y":-320,"width":500,"height":140,"text":"# Bluey Number Guessing Game\nGuess a number from 1 to 100 in 5 tries.\nThree files, one job each:","color":"3"},
+		{"id":"html","type":"text","x":0,"y":-60,"width":400,"height":120,"text":"## index.html\n**Structure** — what is on the page","color":"5"},
+		{"id":"html-0","type":"text","x":20,"y":140,"width":380,"height":130,"text":"**Page setup**\nViewport tag for phones, Fredoka font, links to `style.css` and `script.js`","color":"5"},
+		{"id":"html-1","type":"text","x":20,"y":300,"width":380,"height":130,"text":"**Title & instructions**\n\"Guess a Number\" heading and the 1–100 / 5 guesses rules","color":"5"},
+		{"id":"html-2","type":"text","x":20,"y":460,"width":380,"height":130,"text":"**Guess form**\n`#guess-form`, `#guess-input` (number box) and the **Guess!** button. `novalidate` lets the script handle errors","color":"5"},
+		{"id":"html-3","type":"text","x":20,"y":620,"width":380,"height":130,"text":"**Feedback line**\n`#feedback`: where too high / too low / correct appears (read aloud by screen readers)","color":"5"},
+		{"id":"html-4","type":"text","x":20,"y":780,"width":380,"height":130,"text":"**Remaining guesses**\n`.remaining` box with the big `#guesses-left` number","color":"5"},
+		{"id":"html-5","type":"text","x":20,"y":940,"width":380,"height":130,"text":"**Result pop-up**\n`<dialog id=\"result-dialog\">` with `#result-title`, `#result-message`, `#result-button`. Its button closes the pop-up","color":"5"},
+		{"id":"html-6","type":"text","x":20,"y":1100,"width":380,"height":130,"text":"**Decorations**\n`.paws` and `.grass`, hidden from screen readers","color":"5"},
+		{"id":"css","type":"text","x":520,"y":-60,"width":400,"height":120,"text":"## style.css\n**Appearance** — how it looks","color":"6"},
+		{"id":"css-0","type":"text","x":540,"y":140,"width":380,"height":130,"text":"**Colour palette**\n`:root` variables: sky blue, deep blue, orange, cream, grass green, red","color":"6"},
+		{"id":"css-1","type":"text","x":540,"y":300,"width":380,"height":130,"text":"**Page background**\nSky gradient on `body`, card centred; `.grass` strip at the bottom","color":"6"},
+		{"id":"css-2","type":"text","x":540,"y":460,"width":380,"height":130,"text":"**Game card**\n`.card`: cream, rounded, thick blue border and shadow","color":"6"},
+		{"id":"css-3","type":"text","x":540,"y":620,"width":380,"height":130,"text":"**Inputs & buttons**\nBig number box, chunky orange buttons (48px+ tall), clear focus outlines","color":"6"},
+		{"id":"css-4","type":"text","x":540,"y":780,"width":380,"height":130,"text":"**Feedback colours**\n`.feedback.wrong` = red, `.feedback.right` = green","color":"6"},
+		{"id":"css-5","type":"text","x":540,"y":940,"width":380,"height":130,"text":"**Guess counter**\n`.remaining` and the large `.guesses-left` number","color":"6"},
+		{"id":"css-6","type":"text","x":540,"y":1100,"width":380,"height":130,"text":"**Paw prints**\n`.paws`, `.paw` and toe beans drawn with `::before` / `::after`","color":"6"},
+		{"id":"css-7","type":"text","x":540,"y":1260,"width":380,"height":130,"text":"**Pop-up looks**\n`dialog`, dimmed `::backdrop`, `dialog.win` green, `dialog.lose` red","color":"6"},
+		{"id":"css-8","type":"text","x":540,"y":1420,"width":380,"height":130,"text":"**Fits any screen**\n90% widths with max widths and `clamp()` text sizes; no media queries","color":"6"},
+		{"id":"js","type":"text","x":1040,"y":-60,"width":400,"height":120,"text":"## script.js\n**Behaviour** — the game's brain","color":"2"},
+		{"id":"js-0","type":"text","x":1060,"y":140,"width":380,"height":130,"text":"**Settings**\n`MAX_GUESSES` = 5, `MIN_NUMBER` = 1, `MAX_NUMBER` = 100","color":"2"},
+		{"id":"js-1","type":"text","x":1060,"y":300,"width":380,"height":130,"text":"**Game state**\n`secretNumber` and `guessesLeft`","color":"2"},
+		{"id":"js-2","type":"text","x":1060,"y":460,"width":380,"height":130,"text":"**Element lookups**\nFinds the 8 page elements by ID with `getElementById`","color":"2"},
+		{"id":"js-3","type":"text","x":1060,"y":620,"width":380,"height":130,"text":"**startNewGame()**\nPicks a random number, resets to 5 guesses, clears the box and message","color":"2"},
+		{"id":"js-4","type":"text","x":1060,"y":780,"width":380,"height":130,"text":"**showFeedback()**\nWrites the message and sets the `wrong` / `right` colour class","color":"2"},
+		{"id":"js-5","type":"text","x":1060,"y":940,"width":380,"height":130,"text":"**Submit handler**\nChecks the input, uses a guess, then decides: correct, out of guesses, too high or too low","color":"2"},
+		{"id":"js-6","type":"text","x":1060,"y":1100,"width":380,"height":130,"text":"**showResult()**\nFills in the pop-up text, adds `win` / `lose` and opens it","color":"2"},
+		{"id":"js-7","type":"text","x":1060,"y":1260,"width":380,"height":130,"text":"**Auto-restart**\nWhen the pop-up closes (button or Esc), calls `startNewGame()`","color":"2"},
+		{"id":"ref-title","type":"text","x":1580,"y":-320,"width":560,"height":80,"text":"## Reference\nFull details and line numbers live in the docs below."},
+		{"id":"ref-map","type":"file","file":"docs/PROJECT_MAP.md","x":1580,"y":-220,"width":560,"height":700},
+		{"id":"ref-rules","type":"file","file":"CLAUDE.md","x":1580,"y":520,"width":560,"height":500},
+		{"id":"legend","type":"text","x":1580,"y":1060,"width":560,"height":230,"text":"## Colour key\n- **Cyan**: `index.html` (structure)\n- **Purple**: `style.css` (appearance)\n- **Orange**: `script.js` (behaviour)\n- **Green**: something the player does"},
+		{"id":"flow-group","type":"group","label":"How one round works","x":-80,"y":1700,"width":1580,"height":2160},
+		{"id":"flow-title","type":"text","x":520,"y":1740,"width":380,"height":70,"text":"Box colour = the file that handles that step"},
+		{"id":"f-load","type":"text","x":0,"y":1840,"width":380,"height":130,"text":"**Page loads**\n`index.html` builds the page, `style.css` dresses it","color":"5"},
+		{"id":"f-new","type":"text","x":0,"y":2040,"width":380,"height":130,"text":"**startNewGame()**\nSecret number picked, 5 guesses, everything cleared","color":"2"},
+		{"id":"f-type","type":"text","x":0,"y":2240,"width":380,"height":130,"text":"**Player types a number**\nand clicks **Guess!** or presses Enter","color":"4"},
+		{"id":"f-valid","type":"text","x":0,"y":2440,"width":380,"height":130,"text":"**Is it a whole number from 1 to 100?**\nSubmit handler checks","color":"2"},
+		{"id":"f-hint","type":"text","x":520,"y":2440,"width":380,"height":130,"text":"**Red hint**\n\"Please enter a whole number from 1 to 100.\" No guess used","color":"2"},
+		{"id":"f-use","type":"text","x":0,"y":2640,"width":380,"height":130,"text":"**Use one guess**\n`guessesLeft` goes down; `#guesses-left` updates","color":"2"},
+		{"id":"f-correct","type":"text","x":0,"y":2840,"width":380,"height":130,"text":"**Is it the secret number?**","color":"2"},
+		{"id":"f-win","type":"text","x":520,"y":2840,"width":380,"height":130,"text":"**Green \"Correct!\"**\n`showResult(true)`: Hooray! pop-up","color":"2"},
+		{"id":"f-out","type":"text","x":0,"y":3040,"width":380,"height":130,"text":"**Any guesses left?**","color":"2"},
+		{"id":"f-hilo","type":"text","x":1040,"y":3040,"width":380,"height":130,"text":"**Too high / too low**\nRed message under the box","color":"2"},
+		{"id":"f-lose","type":"text","x":0,"y":3240,"width":380,"height":130,"text":"**Out of guesses**\n`showResult(false)`: \"Oh, biscuits!\" pop-up shows the number","color":"2"},
+		{"id":"f-popup","type":"text","x":0,"y":3440,"width":380,"height":130,"text":"**Pop-up appears**\n`<dialog>` styled green (`.win`) or red (`.lose`)","color":"6"},
+		{"id":"f-close","type":"text","x":0,"y":3640,"width":380,"height":130,"text":"**Player clicks Play Again / Try Again or presses Esc**\n`close` event fires","color":"4"}
 	],
-	"edges": [
-		{
-			"id": "e-root-html",
-			"fromNode": "root",
-			"fromSide": "bottom",
-			"toNode": "html",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-html-0",
-			"fromNode": "html",
-			"fromSide": "bottom",
-			"toNode": "html-0",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-0-html-1",
-			"fromNode": "html-0",
-			"fromSide": "bottom",
-			"toNode": "html-1",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-1-html-2",
-			"fromNode": "html-1",
-			"fromSide": "bottom",
-			"toNode": "html-2",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-2-html-3",
-			"fromNode": "html-2",
-			"fromSide": "bottom",
-			"toNode": "html-3",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-3-html-4",
-			"fromNode": "html-3",
-			"fromSide": "bottom",
-			"toNode": "html-4",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-4-html-5",
-			"fromNode": "html-4",
-			"fromSide": "bottom",
-			"toNode": "html-5",
-			"toSide": "top"
-		},
-		{
-			"id": "e-html-5-html-6",
-			"fromNode": "html-5",
-			"fromSide": "bottom",
-			"toNode": "html-6",
-			"toSide": "top"
-		},
-		{
-			"id": "e-root-css",
-			"fromNode": "root",
-			"fromSide": "bottom",
-			"toNode": "css",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-css-0",
-			"fromNode": "css",
-			"fromSide": "bottom",
-			"toNode": "css-0",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-0-css-1",
-			"fromNode": "css-0",
-			"fromSide": "bottom",
-			"toNode": "css-1",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-1-css-2",
-			"fromNode": "css-1",
-			"fromSide": "bottom",
-			"toNode": "css-2",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-2-css-3",
-			"fromNode": "css-2",
-			"fromSide": "bottom",
-			"toNode": "css-3",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-3-css-4",
-			"fromNode": "css-3",
-			"fromSide": "bottom",
-			"toNode": "css-4",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-4-css-5",
-			"fromNode": "css-4",
-			"fromSide": "bottom",
-			"toNode": "css-5",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-5-css-6",
-			"fromNode": "css-5",
-			"fromSide": "bottom",
-			"toNode": "css-6",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-6-css-7",
-			"fromNode": "css-6",
-			"fromSide": "bottom",
-			"toNode": "css-7",
-			"toSide": "top"
-		},
-		{
-			"id": "e-css-7-css-8",
-			"fromNode": "css-7",
-			"fromSide": "bottom",
-			"toNode": "css-8",
-			"toSide": "top"
-		},
-		{
-			"id": "e-root-js",
-			"fromNode": "root",
-			"fromSide": "bottom",
-			"toNode": "js",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-js-0",
-			"fromNode": "js",
-			"fromSide": "bottom",
-			"toNode": "js-0",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-0-js-1",
-			"fromNode": "js-0",
-			"fromSide": "bottom",
-			"toNode": "js-1",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-1-js-2",
-			"fromNode": "js-1",
-			"fromSide": "bottom",
-			"toNode": "js-2",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-2-js-3",
-			"fromNode": "js-2",
-			"fromSide": "bottom",
-			"toNode": "js-3",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-3-js-4",
-			"fromNode": "js-3",
-			"fromSide": "bottom",
-			"toNode": "js-4",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-4-js-5",
-			"fromNode": "js-4",
-			"fromSide": "bottom",
-			"toNode": "js-5",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-5-js-6",
-			"fromNode": "js-5",
-			"fromSide": "bottom",
-			"toNode": "js-6",
-			"toSide": "top"
-		},
-		{
-			"id": "e-js-6-js-7",
-			"fromNode": "js-6",
-			"fromSide": "bottom",
-			"toNode": "js-7",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-load-f-new",
-			"fromNode": "f-load",
-			"fromSide": "bottom",
-			"toNode": "f-new",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-new-f-type",
-			"fromNode": "f-new",
-			"fromSide": "bottom",
-			"toNode": "f-type",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-type-f-valid",
-			"fromNode": "f-type",
-			"fromSide": "bottom",
-			"toNode": "f-valid",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-valid-f-hint",
-			"fromNode": "f-valid",
-			"fromSide": "right",
-			"toNode": "f-hint",
-			"toSide": "left",
-			"label": "no"
-		},
-		{
-			"id": "e-f-hint-f-type",
-			"fromNode": "f-hint",
-			"fromSide": "top",
-			"toNode": "f-type",
-			"toSide": "right",
-			"label": "try again"
-		},
-		{
-			"id": "e-f-valid-f-use",
-			"fromNode": "f-valid",
-			"fromSide": "bottom",
-			"toNode": "f-use",
-			"toSide": "top",
-			"label": "yes"
-		},
-		{
-			"id": "e-f-use-f-correct",
-			"fromNode": "f-use",
-			"fromSide": "bottom",
-			"toNode": "f-correct",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-correct-f-win",
-			"fromNode": "f-correct",
-			"fromSide": "right",
-			"toNode": "f-win",
-			"toSide": "left",
-			"label": "yes"
-		},
-		{
-			"id": "e-f-correct-f-out",
-			"fromNode": "f-correct",
-			"fromSide": "bottom",
-			"toNode": "f-out",
-			"toSide": "top",
-			"label": "no"
-		},
-		{
-			"id": "e-f-out-f-hilo",
-			"fromNode": "f-out",
-			"fromSide": "right",
-			"toNode": "f-hilo",
-			"toSide": "left",
-			"label": "yes"
-		},
-		{
-			"id": "e-f-hilo-f-type",
-			"fromNode": "f-hilo",
-			"fromSide": "top",
-			"toNode": "f-type",
-			"toSide": "right",
-			"label": "guess again"
-		},
-		{
-			"id": "e-f-out-f-lose",
-			"fromNode": "f-out",
-			"fromSide": "bottom",
-			"toNode": "f-lose",
-			"toSide": "top",
-			"label": "no"
-		},
-		{
-			"id": "e-f-win-f-popup",
-			"fromNode": "f-win",
-			"fromSide": "bottom",
-			"toNode": "f-popup",
-			"toSide": "right"
-		},
-		{
-			"id": "e-f-lose-f-popup",
-			"fromNode": "f-lose",
-			"fromSide": "bottom",
-			"toNode": "f-popup",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-popup-f-close",
-			"fromNode": "f-popup",
-			"fromSide": "bottom",
-			"toNode": "f-close",
-			"toSide": "top"
-		},
-		{
-			"id": "e-f-close-f-new",
-			"fromNode": "f-close",
-			"fromSide": "left",
-			"toNode": "f-new",
-			"toSide": "left",
-			"label": "new game"
-		}
+	"edges":[
+		{"id":"e-root-html","fromNode":"root","fromSide":"bottom","toNode":"html","toSide":"top"},
+		{"id":"e-html-html-0","fromNode":"html","fromSide":"bottom","toNode":"html-0","toSide":"top"},
+		{"id":"e-html-0-html-1","fromNode":"html-0","fromSide":"bottom","toNode":"html-1","toSide":"top"},
+		{"id":"e-html-1-html-2","fromNode":"html-1","fromSide":"bottom","toNode":"html-2","toSide":"top"},
+		{"id":"e-html-2-html-3","fromNode":"html-2","fromSide":"bottom","toNode":"html-3","toSide":"top"},
+		{"id":"e-html-3-html-4","fromNode":"html-3","fromSide":"bottom","toNode":"html-4","toSide":"top"},
+		{"id":"e-html-4-html-5","fromNode":"html-4","fromSide":"bottom","toNode":"html-5","toSide":"top"},
+		{"id":"e-html-5-html-6","fromNode":"html-5","fromSide":"bottom","toNode":"html-6","toSide":"top"},
+		{"id":"e-root-css","fromNode":"root","fromSide":"bottom","toNode":"css","toSide":"top"},
+		{"id":"e-css-css-0","fromNode":"css","fromSide":"bottom","toNode":"css-0","toSide":"top"},
+		{"id":"e-css-0-css-1","fromNode":"css-0","fromSide":"bottom","toNode":"css-1","toSide":"top"},
+		{"id":"e-css-1-css-2","fromNode":"css-1","fromSide":"bottom","toNode":"css-2","toSide":"top"},
+		{"id":"e-css-2-css-3","fromNode":"css-2","fromSide":"bottom","toNode":"css-3","toSide":"top"},
+		{"id":"e-css-3-css-4","fromNode":"css-3","fromSide":"bottom","toNode":"css-4","toSide":"top"},
+		{"id":"e-css-4-css-5","fromNode":"css-4","fromSide":"bottom","toNode":"css-5","toSide":"top"},
+		{"id":"e-css-5-css-6","fromNode":"css-5","fromSide":"bottom","toNode":"css-6","toSide":"top"},
+		{"id":"e-css-6-css-7","fromNode":"css-6","fromSide":"bottom","toNode":"css-7","toSide":"top"},
+		{"id":"e-css-7-css-8","fromNode":"css-7","fromSide":"bottom","toNode":"css-8","toSide":"top"},
+		{"id":"e-root-js","fromNode":"root","fromSide":"bottom","toNode":"js","toSide":"top"},
+		{"id":"e-js-js-0","fromNode":"js","fromSide":"bottom","toNode":"js-0","toSide":"top"},
+		{"id":"e-js-0-js-1","fromNode":"js-0","fromSide":"bottom","toNode":"js-1","toSide":"top"},
+		{"id":"e-js-1-js-2","fromNode":"js-1","fromSide":"bottom","toNode":"js-2","toSide":"top"},
+		{"id":"e-js-2-js-3","fromNode":"js-2","fromSide":"bottom","toNode":"js-3","toSide":"top"},
+		{"id":"e-js-3-js-4","fromNode":"js-3","fromSide":"bottom","toNode":"js-4","toSide":"top"},
+		{"id":"e-js-4-js-5","fromNode":"js-4","fromSide":"bottom","toNode":"js-5","toSide":"top"},
+		{"id":"e-js-5-js-6","fromNode":"js-5","fromSide":"bottom","toNode":"js-6","toSide":"top"},
+		{"id":"e-js-6-js-7","fromNode":"js-6","fromSide":"bottom","toNode":"js-7","toSide":"top"},
+		{"id":"e-f-load-f-new","fromNode":"f-load","fromSide":"bottom","toNode":"f-new","toSide":"top"},
+		{"id":"e-f-new-f-type","fromNode":"f-new","fromSide":"bottom","toNode":"f-type","toSide":"top"},
+		{"id":"e-f-type-f-valid","fromNode":"f-type","fromSide":"bottom","toNode":"f-valid","toSide":"top"},
+		{"id":"e-f-valid-f-hint","fromNode":"f-valid","fromSide":"right","toNode":"f-hint","toSide":"left","label":"no"},
+		{"id":"e-f-hint-f-type","fromNode":"f-hint","fromSide":"top","toNode":"f-type","toSide":"right","label":"try again"},
+		{"id":"e-f-valid-f-use","fromNode":"f-valid","fromSide":"bottom","toNode":"f-use","toSide":"top","label":"yes"},
+		{"id":"e-f-use-f-correct","fromNode":"f-use","fromSide":"bottom","toNode":"f-correct","toSide":"top"},
+		{"id":"e-f-correct-f-win","fromNode":"f-correct","fromSide":"right","toNode":"f-win","toSide":"left","label":"yes"},
+		{"id":"e-f-correct-f-out","fromNode":"f-correct","fromSide":"bottom","toNode":"f-out","toSide":"top","label":"no"},
+		{"id":"e-f-out-f-hilo","fromNode":"f-out","fromSide":"right","toNode":"f-hilo","toSide":"left","label":"yes"},
+		{"id":"e-f-hilo-f-type","fromNode":"f-hilo","fromSide":"top","toNode":"f-type","toSide":"right","label":"guess again"},
+		{"id":"e-f-out-f-lose","fromNode":"f-out","fromSide":"bottom","toNode":"f-lose","toSide":"top","label":"no"},
+		{"id":"e-f-win-f-popup","fromNode":"f-win","fromSide":"bottom","toNode":"f-popup","toSide":"right"},
+		{"id":"e-f-lose-f-popup","fromNode":"f-lose","fromSide":"bottom","toNode":"f-popup","toSide":"top"},
+		{"id":"e-f-popup-f-close","fromNode":"f-popup","fromSide":"bottom","toNode":"f-close","toSide":"top"},
+		{"id":"e-f-close-f-new","fromNode":"f-close","fromSide":"left","toNode":"f-new","toSide":"left","label":"new game"}
 	]
 }
