@@ -37,6 +37,9 @@ When working on this project:
 
 - Keep the application simple and beginner-friendly.
 - Do not add features that were not requested.
+
+
+- This is added to show that we can pull changes down from GH
 - Keep the game focused on a single player.
 - Make instructions and messages clear to someone using the game for the first time.
 - Before making major changes to how the game works, explain the proposed change first.
