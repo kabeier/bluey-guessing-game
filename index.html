@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess a Number</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <!-- Decorative paw prints (drawn with CSS) -->
+    <div class="paws" aria-hidden="true">
+      <span class="paw"></span>
+      <span class="paw"></span>
+    </div>
+
+    <h1>Guess a Number</h1>
+    <p class="instructions">
+      Guess a number between 1 and 100.<br>
+      You have 5 guesses total.
+    </p>
+
+    <form id="guess-form" autocomplete="off" novalidate>
+      <label for="guess-input">Enter your guess:</label>
+      <div class="guess-row">
+        <input type="number" id="guess-input" min="1" max="100" step="1" inputmode="numeric" required>
+        <button type="submit">Guess!</button>
+      </div>
+    </form>
+
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+
+    <div class="remaining">
+      <p>Remaining Guesses</p>
+      <p id="guesses-left" class="guesses-left">5</p>
+    </div>
+  </main>
+
+  <!-- Pop-up shown when the game ends -->
+  <dialog id="result-dialog">
+    <form method="dialog">
+      <h2 id="result-title"></h2>
+      <p id="result-message"></p>
+      <button type="submit" id="result-button"></button>
+    </form>
+  </dialog>
+
+  <div class="grass" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
